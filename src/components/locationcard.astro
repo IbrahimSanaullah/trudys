@@ -1,0 +1,74 @@
+---
+import { imageConfig } from "astro:assets";
+
+// This component displays the hours and locations for two restaurant branches.
+// The data is hardcoded below, but you could easily fetch this from a CMS or API.
+import Icon from "astro-icon";
+
+const locations = [
+  {
+    name: "TRUDY'S ICECREAM - 975 Columbus Ave New York, NY 10025",
+    number: "(646) 649-3612",
+    mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3020.254079844204!2d-73.96438912305297!3d40.80041013219698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f71fa281a16f%3A0x3b50b06477e61204!2sTrudy's%20Ice%20Cream!5e0!3m2!1sen!2sus!4v1756218191899!5m2!1sen!2sus.", // Placeholder
+    hours: [
+      { day: "Monday", times: "12:00pm - 9:00pm" },
+      { day: "Tuesday", times: "12:00pm - 9:00pm" },
+      { day: "Wednesday", times: "12:00pm - 9:00pm" },
+      { day: "Thursday", times: "12:00pm - 9:00pm" },
+      { day: "Friday", times: "12:00pm - 9:00pm" },
+      { day: "Saturday", times: "12:00pm - 9:00pm" },
+      { day: "Sunday", times: "12:00pm - 9:00pm" },
+    ]
+  }
+];
+---
+
+<section class="py-12 bg-wc lg:py-20">
+  <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-pc lg:text-6xl uppercase">
+        Hours & Locations
+      </h2>
+      <!-- <p class="mt-4 text-base font-normal leading-7 text-gray-600">
+        We have two locations to serve you. Come on down for some delicious tacos!
+      </p> -->
+    </div>
+
+    <div class="grid max-w-xl grid-cols-1 gap-12 mx-auto mt-12 md:max-w-full lg:gap-16">
+      {locations.map(location => (
+        <div class="flex flex-col p-8 bg-white rounded-lg shadow-lg">
+          <h3 class="text-2xl font-bold text-pc text-left uppercase">{location.name}</h3>
+          <p class="mt-2 text-slate-600 space-x-2 flex items-center font-serif"> <Icon class="text-gray-400 w-4 h-4" name="uil:phone" /> <a href="tel:{ location.number }">{ location.number }</a></p>
+          
+          <div class="grid flex-1 grid-cols-1 gap-8 mt-8 md:grid-cols-2 md:items-start">
+            <div class="relative w-full h-64 md:h-full min-h-[250px]">
+              <iframe
+                src={location.mapSrc}
+                width="100%"
+                height="100%"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                class="rounded-lg"
+              ></iframe>
+            </div>
+            <div class="text-left">
+              <h4 class="text-lg font-semibold text-gray-800">HOURS</h4>
+              <ul class="mt-4 space-y-2">
+                {location.hours.map(hour => (
+                  <li class="flex justify-between text-sm text-gray-700 font-serif">
+                    <span class="font-medium">{hour.day}</span>
+                    <span>{hour.times}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+

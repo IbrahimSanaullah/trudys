@@ -1,0 +1,15 @@
+---
+import { Picture } from "astro:assets";
+import heroImage from "assets/imageh2.png";
+
+---
+
+<section class= "-mx-8 ">
+  <Picture
+      src={heroImage}
+      alt="icecream"
+      formats={['avif', 'webp']}
+      fallbackFormat="jpg"
+      class="w-full h-[80vh] object-cover lg:h-full fade-up-small fade-in-fast"
+    />
+</section>

@@ -1,0 +1,35 @@
+---
+import Link from "@components/ui/link.astro";
+import { Picture } from "astro:assets";
+import MenuPic from "assets/menupic.png";
+---
+
+<section class="-mx-8 bg-pc">
+  <main
+    class="grid lg:grid-cols-2 lg:items-center place-items-center w-full overflow-hidden py-[4rem] px-8 space-y-[4rem] lg:space-y-0 fade-up fade-up-small fade-in-fast">
+    <div
+      class="space-y-[4rem] lg:p-[2rem] xl:p-[4rem] fade-right fade-in-fast flex flex-col justify-center">
+      <h1
+        class="text-7xl lg:text-8xl 2xl:text-9xl font-semibold text-center lg:text-left text-wc -mb-6 lg:-my-8 2xl:-my-8">
+        MENU
+      </h1>
+      <p
+        class="text-md lg:text-lg 2xl:text-xl font-normal text-center lg:text-left text-wc font-serif lg:leading-[150%] xl:leading-[200%] 2xl:leading-[250%]">
+        House made flavors like Peanut Butter, Bacon Maple Walnut, Pumpkin Pecan, and Coffee Toffee Crunch. Try them in our cinnamon crisp waffle cones, or enjoy soft serve, shakes, sundaes, splits, and more.
+      </p>
+      <div class="text-md lg:text-lg 2xl:text-xl text-center lg:text-left">
+        <Link href="/menu" size="md" style="inverted">VIEW MENU</Link>
+      </div>
+    </div>
+
+    <div
+      class="flex justify-center items-center order-2 lg:order-1 fade-in scale-up lg:p-[2rem] xl:p-[3rem] 2xl:p-[4rem]">
+      <Picture
+        src={MenuPic}
+        alt="icecream"
+        formats={['avif', 'webp']}
+        fallbackFormat="jpg"
+      />
+    </div>
+  </main>
+</section>

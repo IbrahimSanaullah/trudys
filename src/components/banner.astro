@@ -1,0 +1,30 @@
+---
+import Link from "@components/ui/link.astro";
+import { getImage } from "astro:assets";
+import myBackground from "assets/banner.png"
+
+const optimizedBackground = await getImage({src: myBackground, format: 'webp'})
+---
+
+<section class="-mx-8">
+  <main class="fade-up-small fade-in-fast place-items-center w-full overflow-hidden py-[4rem]  xl:py-[8rem] bg-cover bg-center bg-no-repeat" style={`background-image: url(${optimizedBackground.src});`}>
+
+    <div class="space-y-[4rem] mx-8">
+      <h1
+        class="font-noto text-5xl xl:text-6xl font-semibold text-center text-wc ">
+        WANT TO OWN YOUR OWN DOS TACOS?
+      </h1>
+      
+      <p class="font-serif text-md lg:text-lg 2xl:text-xl text-center text-wc logo" >
+        Franchise opportunities now available!
+      </p>
+
+      <div class="place-items-center flex justify-center text-md lg:text-lg 2xl:text-xl">
+        <Link href="/franchising" size="md" style="outline">CONTACT US</Link>
+      </div>
+
+    </div>
+
+  </main>
+</section>
+

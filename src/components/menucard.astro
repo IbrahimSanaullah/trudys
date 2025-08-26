@@ -1,0 +1,185 @@
+---
+const iceCreamMenuData = [
+  {
+    category: "Home-Made Ice Cream",
+    items: [
+      {
+        name: "Cones",
+        options: [
+          { size: "1-DIP", price: "$5" },
+          { size: "2-DIP", price: "$7" },
+          { size: "WAFFLE", price: "$8" }
+        ]
+      },
+      {
+        name: "Cups",
+        options: [
+          { size: "8OZ", price: "$5" },
+          { size: "12OZ", price: "$7" },
+          { size: "16OZ", price: "$9" }
+        ]
+      },
+      {
+        name: "Sundaes",
+        options: [
+          { size: "16OZ", price: "$11" }
+        ],
+        description: "Strawberry - Pineapple - Chocolate - Hot Fudge - Maple Walnut - Caramel"
+      },
+      {
+        name: "Shakes",
+        price: "$11",
+        description: "16oz"
+      },
+      {
+        name: "Banana Split",
+        price: "$12"
+      },
+      {
+        name: "Water",
+        price: "$3",
+        description: "20oz"
+      }
+    ],
+    flavors: [
+      "PEANUT BUTTER", "MAPLE WALNUT", "COFFEE TOFFEE", "GERMAN CHOCOLATE", 
+      "MINT DARK CHOCOLATE", "CHOCOLATE", "TRUDY FRUITY", "STRAWBERRY", 
+      "COCONUT PINEAPPLE", "PUMPKIN PECAN"
+    ]
+  },
+  {
+    category: "Soft Serve",
+    subtitle: "Vanilla, Orange Sorbet or Twist",
+    items: [
+      {
+        name: "Cones",
+        options: [
+          { size: "SM", price: "$4" },
+          { size: "LG", price: "$6" },
+          { size: "WAFFLE", price: "$7" }
+        ],
+        description: "(Includes cone dip, sprinkles & nuts. Tax included)"
+      },
+      {
+        name: "Cups",
+        options: [
+          { size: "8OZ", price: "$4" },
+          { size: "12OZ", price: "$6" },
+          { size: "16OZ", price: "$8" }
+        ]
+      },
+      {
+        name: "Sundaes",
+        options: [
+          { size: "8OZ", price: "$6" },
+          { size: "12OZ", price: "$8" },
+          { size: "16OZ", price: "$10" }
+        ],
+        description: "Strawberry - Pineapple - Chocolate - Hot Fudge - Maple Walnut - Caramel"
+      },
+      {
+        name: "Shakes",
+        price: "$8",
+        description: "16oz (Vanilla - Chocolate - Strawberry - Banana - Caramel)"
+      },
+      {
+        name: "Banana Split",
+        price: "$11"
+      },
+      {
+        name: "Frozen Banana",
+        price: "$4"
+      },
+      {
+        name: "Water",
+        price: "$3",
+        description: "20oz"
+      }
+    ]
+  }
+];
+---
+
+<div class="relative">
+  <div class="bg-gradient-to-br from-pc to-sc text-white font-sans text-center py-[4rem]">
+    <div class="container mx-auto max-w-4xl px-8">
+      <h1 class="text-6xl lg:text-7xl font-bold mb-4 text-shadow">
+        MENU
+      </h1>
+      <p class="text-xl opacity-90">Home-Made Ice Cream & Soft Serve</p>
+    </div>
+  </div>
+
+  <main class="bg-gray-100 py-8">
+    <div class="container mx-auto max-w-6xl px-8">
+      {
+        iceCreamMenuData.map((section) => (
+          <div class="bg-white rounded-2xl shadow-lg mb-8 p-8">
+            <h2 class="text-4xl font-bold text-pc text-center border-b-4 border-sc pb-4 mb-6 uppercase">
+              {section.category}
+            </h2>
+            
+            {section.subtitle && (
+              <p class="text-center text-lg text-pc italic mb-6 font-medium">
+                {section.subtitle}
+              </p>
+            )}
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 mb-8">
+              {section.items.map((item) => (
+                <div class="bg-gray-50 rounded-xl p-6 border-l-4 border-sc hover:shadow-md transition-shadow">
+                  <h3 class="text-xl font-bold text-pc mb-3 uppercase">
+                    {item.name}
+                  </h3>
+                  
+                  {item.options ? (
+                    <div class="space-y-2">
+                      {item.options.map((option) => (
+                        <div class="flex justify-between items-center">
+                          <span class="font-medium">{option.size}</span>
+                          <span class="text-sc font-bold text-lg">{option.price}</span>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div class="flex justify-between items-start">
+                      <div class="flex-1">
+                        {item.description && (
+                          <p class="text-gray-600 text-sm mt-1">{item.description}</p>
+                        )}
+                      </div>
+                      <span class="text-sc font-bold text-xl ml-4">{item.price}</span>
+                    </div>
+                  )}
+                  
+                  {item.description && item.options && (
+                    <p class="text-gray-600 text-xs mt-3 italic">{item.description}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {section.flavors && (
+              <div class="bg-white border-2 border-pc rounded-xl p-6">
+                <h3 class="text-xl font-bold text-pc mb-4 text-center">FLAVORS</h3>
+                <div class="flex flex-wrap justify-center gap-2">
+                  {section.flavors.map((flavor) => (
+                    <span class="bg-sc text-white px-3 py-1 rounded-full text-sm font-medium">
+                      {flavor}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        ))
+      }
+    </div>
+  </main>
+</div>
+
+<style>
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+</style>

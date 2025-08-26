@@ -1,0 +1,52 @@
+---
+// You can define props for links if you want to make the component more reusable
+import { Icon } from "astro-icon";
+import Picture from "astro/components/Picture.astro";
+import logo from "assets/logo.png";
+---
+
+<footer class="border-t border-slate-200">
+  <div class="container mx-auto ">
+    <div
+      class="flex flex-col items-center gap-8 lg:flex-row lg:justify-between lg:items-center py-12">
+      <div class="flex-shrink-0">
+        <Picture
+          src={logo}
+          alt="Company logo"
+          class="h-16 lg:h-24 w-auto max-w-[200px] object-contain"
+          formats={['avif', 'webp']}
+            fallbackFormat="jpg"
+        />
+      </div>
+
+      <div class="flex-grow">
+        <ul
+          class="flex flex-col items-center justify-center gap-y-2 text-pc lg:flex-row lg:justify-end lg:gap-x-6 text-lg">
+          <li>
+            <a href="/terms" class="hover:text-slate-900 hover:underline"
+              >HOME</a>
+          </li>
+          <li>
+            <a href="/locations" class="hover:text-slate-900 hover:underline"
+              >HOURS&LOCATION</a>
+          </li>
+          <li>
+            <a href="/menu" class="hover:text-slate-900 hover:underline"
+              >MENU</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class=" border-t border-slate-200 py-4 flex justify-center">
+      <a
+        href="https://fooddevs.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-center text-sm text-maintextcolor font-mono">
+        Powered by <span class=" text-maintextcolor">Food</span><span class=" text-customTeal">Devs</span
+          >
+      </a>
+    </div>
+  </div>
+</footer>

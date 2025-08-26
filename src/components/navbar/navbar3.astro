@@ -1,0 +1,71 @@
+---
+import Link from "@components/ui/link.astro";
+import Dropdown from "./dropdown.astro";
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import { Picture } from "astro:assets";
+import logo from "assets/logo.png";
+
+const menuitems = [
+  {
+    title: "Menu",
+    path: "/menu",
+  },
+  {
+    title: "Hours&Location",
+    path: "/locations",
+  },
+  
+  {
+    title: "Contact Us",
+    path: "/contact",
+    badge: false,
+  },
+];
+---
+
+<header class="sticky top-0 z-50 bg-white shadow-md w-full">
+  <div
+    class="mx-auto px-8 flex flex-col lg:flex-row justify-between items-center w-full py-5">
+    <Astronav>
+      <div class="flex w-full lg:w-auto items-center justify-between">
+        <a href="/">
+          <Picture
+            src={logo}
+            alt="Company logo"
+            class="h-16 lg:h-24 w-auto max-w-[200px] object-contain"
+            formats={['avif', 'webp']}
+            fallbackFormat="jpg"
+          />
+        </a>
+        <div class="block lg:hidden logo">
+          <MenuIcon class="w-4 h-4 text-gray-800" />
+        </div>
+      </div>
+      <MenuItems
+        class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0 lg:ml-auto">
+        <ul class="flex flex-col lg:flex-row lg:gap-3">
+          {
+            menuitems.map((item, index) => (
+              <li>
+                <a
+                  href={item.path}
+                  class="flex lg:px-4 py-2  items-center text-pc hover:text-sc uppercase">
+                  <span>{item.title}</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+        <div
+          class="lg:hidden flex items-center mt-2 gap-4 uppercase text-pc hover:text-sc">
+          <div onclick="openModal('orderModal')" style="cursor: pointer;">
+            <a href="https://trudysicecream.dine.online/" target="_blank">Order Online</a>
+          </div>
+        </div>
+      </MenuItems>
+    </Astronav>
+    <div class="hidden lg:flex items-center gap-4 pl-8">
+      <Link href="https://trudysicecream.dine.online/" target="_blank" size="md">ORDER ONLINE</Link>
+    </div>
+  </div>
+</header>

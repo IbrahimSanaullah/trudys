@@ -1,0 +1,214 @@
+---
+import Link from "@components/ui/link.astro";
+---
+
+<section class="-mx-8">
+  <main
+    class="trudys-section place-items-center w-full overflow-visible py-[4rem] lg:py-[8rem] fade-in-fast">
+    <div class="space-y-[4rem]">
+      <h1
+        class="font-noto text-5xl xl:text-6xl font-semibold text-center text-pc -mb-4 uppercase px-8">
+        Welcome Trudy’s Ice Cream
+      </h1>
+
+      <p class="font-serif text-md lg:text-lg text-center text-gray-bc px-8">
+        Handcrafted scoops made the old fashioned way since 1949. From simple,
+        quality ingredients to family recipes, every bite honors Trudy’s legacy.
+        Come for the classics, stay for the creative flavors.
+      </p>
+
+      <div
+        class="place-items-center flex justify-center text-md lg:text-lg 2xl:text-xl">
+        <Link
+          href="https://trudysicecream.dine.online/"
+          target="_blank"
+          size="md">ORDER ONLINE</Link
+        >
+      </div>
+    </div>
+  </main>
+</section>
+
+<style>
+  /* Trudy's Ice Cream inspired bubbly border design */
+  .trudys-section {
+    position: relative;
+    border: 6px solid #e91e63; /* Pink outer border */
+    border-radius: 3rem;
+    margin: 2rem auto;
+    max-width: calc(100% - 4rem);
+    background: white;
+    /* Create the layered bubbly border effect */
+    box-shadow:
+      inset 0 0 0 20px white,
+      /* White inner ring */ inset 0 0 0 24px #e91e63,
+      /* Pink inner border */ inset 0 0 0 28px white,
+      /* Another white ring */ inset 0 0 0 32px #3f51b5,
+      /* Navy blue ring (matching logo) */ inset 0 0 0 36px white,
+      /* Final white ring */ 0 8px 32px rgba(233, 30, 99, 0.3),
+      /* Pink shadow */ 0 4px 16px rgba(63, 81, 181, 0.2); /* Navy shadow */
+  }
+
+  /* Alternative softer version */
+  .trudys-section-soft {
+    position: relative;
+    border: 5px solid #e91e63;
+    border-radius: 2.5rem;
+    margin: 2rem auto;
+    max-width: calc(100% - 4rem);
+    background: linear-gradient(135deg, #fff 0%, #fce4ec 100%);
+
+    box-shadow:
+      inset 0 0 0 18px white,
+      inset 0 0 0 22px #f06292,
+      /* Lighter pink */ inset 0 0 0 26px white,
+      inset 0 0 0 30px #5c6bc0,
+      /* Lighter navy */ 0 6px 24px rgba(233, 30, 99, 0.2);
+  }
+
+  /* Extra bubbly version with more curves */
+  .trudys-section-bubbly {
+    position: relative;
+    border: 8px solid #e91e63;
+    border-radius: 4rem;
+    margin: 2rem auto;
+    max-width: calc(100% - 4rem);
+    background: radial-gradient(circle at 30% 30%, #fce4ec 0%, white 70%);
+
+    /* More dramatic layering */
+    box-shadow:
+      inset 0 0 0 25px white,
+      inset 0 0 0 30px #e91e63,
+      inset 0 0 0 35px white,
+      inset 0 0 0 40px #3f51b5,
+      inset 0 0 0 45px white,
+      inset 0 0 0 50px #f06292,
+      /* Additional light pink ring */ 0 10px 40px rgba(233, 30, 99, 0.4),
+      0 5px 20px rgba(63, 81, 181, 0.3);
+  }
+
+  /* Decorative ice cream scoop dots */
+  .trudys-section::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(45deg, #e91e63 0%, #f06292 100%);
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 2px 8px rgba(233, 30, 99, 0.3);
+    z-index: 10;
+  }
+
+  .trudys-section::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(45deg, #3f51b5 0%, #5c6bc0 100%);
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 2px 8px rgba(63, 81, 181, 0.3);
+    z-index: 10;
+  }
+
+  /* Multiple decorative scoops version */
+  .trudys-section-scoops {
+    position: relative;
+    border: 6px solid #e91e63;
+    border-radius: 3rem;
+    margin: 2rem auto;
+    max-width: calc(100% - 4rem);
+    background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 50%, #fce4ec 100%);
+
+    box-shadow:
+      inset 0 0 0 20px white,
+      inset 0 0 0 24px #e91e63,
+      inset 0 0 0 28px white,
+      inset 0 0 0 32px #3f51b5,
+      inset 0 0 0 36px white,
+      0 8px 32px rgba(233, 30, 99, 0.3),
+      0 4px 16px rgba(63, 81, 181, 0.2);
+  }
+
+  /* Three ice cream scoops on top */
+  .trudys-section-scoops::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 20px;
+    background: white;
+    z-index: 8;
+  }
+
+  .trudys-section-scoops::after {
+    content: "🍦🍦🍦";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    z-index: 10;
+    background: white;
+    padding: 2px 8px;
+    border-radius: 15px;
+    border: 2px solid #e91e63;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .trudys-section,
+    .trudys-section-soft,
+    .trudys-section-bubbly,
+    .trudys-section-scoops {
+      margin: 1rem auto;
+      max-width: calc(100% - 2rem);
+      border-radius: 2rem;
+    }
+
+    .trudys-section,
+    .trudys-section-soft {
+      border-width: 4px;
+      box-shadow:
+        inset 0 0 0 15px white,
+        inset 0 0 0 19px #e91e63,
+        inset 0 0 0 23px white,
+        inset 0 0 0 27px #3f51b5,
+        inset 0 0 0 31px white,
+        0 4px 16px rgba(233, 30, 99, 0.2);
+    }
+
+    .trudys-section-bubbly {
+      border-width: 5px;
+      border-radius: 2.5rem;
+      box-shadow:
+        inset 0 0 0 18px white,
+        inset 0 0 0 22px #e91e63,
+        inset 0 0 0 26px white,
+        inset 0 0 0 30px #3f51b5,
+        inset 0 0 0 34px white,
+        inset 0 0 0 38px #f06292,
+        0 6px 24px rgba(233, 30, 99, 0.3);
+    }
+
+    .trudys-section::before,
+    .trudys-section::after {
+      width: 12px;
+      height: 12px;
+      top: -10px;
+    }
+
+    .trudys-section::after {
+      bottom: -10px;
+    }
+  }
+</style>

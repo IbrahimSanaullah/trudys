@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+@font-face {
+  font-family: 'Noto Sans Display';
+  src: url('/fonts/NotoSansDisplaySemiCondensedBlack.ttf') format('truetype');
+  font-display: swap;
+}
+
+.fade-up {
+    transform: translateY(160px);
+    transition: all 1s ease;
+}
+
+.fade-up-small {
+    transform: translateY(20px);
+    transition: all 1s ease;
+}
+
+.fade-right {
+    transform: translateX(-80px);
+    transition: all 0.5s ;
+}
+.fade-left {
+    transform: translateX(80px);
+    transition: all 0.5s ;
+}
+.fade-down {
+    transform: translateY(-50px);
+
+    transition: all 1s ease;
+}
+.fade-in {
+    opacity: 0;
+    transition: all 2s;
+}
+.fade-in-fast {
+    opacity: 0;
+    transition: all 1s;
+}
+.scale-up {
+    transform: scale(0); /* Start with a scale of 0 */
+    transition: all 1s ease; /* Transition back to normal size */
+}
+.blur {
+    filter: blur(2px); /* Start with a blur effect */
+    transition: filter 1s ease; /* Transition the blur effect */
+}
+
+
+
+.show.blur {
+    filter: blur(0); /* Remove the blur */
+}
+
+.show.scale-up {
+    transform: scale(1); /* Scale to original size */
+}
+
+.show.fade-up, .show.fade-down, .show.fade-up-small {
+    transform: translateY(0);
+}
+
+.show.fade-right, .show.fade-left {
+    transform: translateX(0);
+}
+
+.show.fade-in,  .show.fade-in-fast{
+    opacity: 1;
+}
+
+
+
+@media (max-width: 768px) {
+    .fade-up {
+        transform: translateY(0); /* Remove the translateY effect */
+}
+}
+
+.typewriter {
+    overflow: hidden; /* Hide the overflow text initially */
+    white-space: nowrap; /* Prevents the text from wrapping */
+    width: 0; /* Start with no width */
+    transition: width 2s ease-out, opacity 0s 1s ease-in-out; /* Transition width and opacity */
+}
+
+/* When the element is visible, apply the typewriter effect */
+.show.typewriter {
+    width: 100%; /* Animate the width to reveal text */
+}
+
+
+
+
+@media (prefers-reduced-motion: reduce) {
+    .fade-up, .fade-right, .fade-left, .fade-down, .fade-in, .fade-in-fast, .scale-up, .blur {
+        transition: none;
+    }
+}
+
+
+
+
+
+
+
+
+.logo:nth-child(2) {
+    transition-delay: 200ms;
+}
+
+.logo:nth-child(3) {
+    transition-delay: 400ms;
+}
+
+.logo:nth-child(4) {
+    transition-delay: 600ms;
+}
+
+.logo:nth-child(5) {
+    transition-delay: 700ms;
+}
+
+.logo:nth-child(6) {
+    transition-delay: 800ms;
+}
+
+.logo:nth-child(7) {
+    transition-delay: 900ms;
+}
+
+.logo:nth-child(8) {
+    transition-delay: 1000ms;
+}
+
+.logo:nth-child(9) {
+    transition-delay: 1400ms;
+}
+
+
+
+
+
+.logo2:nth-child(1) {
+    transition-delay: 100ms;
+}
+
+
+.logo2:nth-child(2) {
+    transition-delay: 200ms;
+}
+
+
+.logo2:nth-child(3) {
+    transition-delay: 400ms;
+}
+
+.logo2:nth-child(4) {
+    transition-delay: 700ms;
+}
+
